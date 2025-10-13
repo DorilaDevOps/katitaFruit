@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="robots" content="index, follow, o puede ir nofollow y noindex">
+    <meta name="description"
+        content="es una empresa familiar con raíces profundas en la tierra y sus frutos. venta de Frutas y Verduras">
+    <link rel="canonical" href="">
+    <meta name="keywords" content="Frutas, verduras, especias.">
+    <meta name="author" content="Kikiriya_DevOps">
+    <title>Katita Fruit - Frutas y Verduras de Primera Calidad</title>
+	<link rel="shortcut icon" href="./logo/logoKatita2.jpg.jpg" type="image/jpg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #2d5016;
+            --secondary-green: #4a7c24;
+            --light-green: #7fb843;
+            --accent-green: #a8d96e;
+            --bg-color: #ffffff;
+            --text-color: #2c3e21;
+            --card-bg: #f8fdf4;
+            --shadow: rgba(45, 80, 22, 0.5);
+			--rojo:#ce5151;
+			--transition-default: all 0.3s ease;
+        }
+
+        [data-theme="dark"] {
+            --primary-green: #7fb843;
+            --secondary-green: #a8d96e;
+            --light-green: #4a7c24;
+            --accent-green: #2d5016;
+            --bg-color: #1a1f16;
+            --text-color: #e8f5e1;
+            --card-bg: #252d20;
+            --shadow: rgba(0, 0, 0, 0.3);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--accent-green);
+            color: var(--text-color);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px var(--shadow);
+            transition: background-color 0.3s ease; 
+			backdrop-filter: blur(10px);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1.8rem;
+        }
+
+        .logo {
+		 <!-- background-image: url('./logo/logoTipo-fruit-small.png'); -->
+            <!-- background-size: cover; -->
+            <!-- background-position: center; -->
+            position: relative;
+			
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, var(--light-green), var(--accent-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+			position: relative;
+            transition: transform 0.3s ease;
+        }
+		.logo img{
+		    width: 100px;
+			height: 100px;
+			padding-top: 30px;
+			object-fit: cover;
+			border-radius: 50%;
+			transition: 1s cubic-bezier(0.4, 0, 0.2, 1);
+			border-width: 2px;
+			background-size: cover;
+            background-position: center;
+		}
+		
+
+<!-- logo::before{ -->
+ <!-- content: ''; -->
+            <!-- position: absolute; -->
+            <!-- top: 0; -->
+            <!-- left: 0; -->
+            <!-- width: 100%; -->
+            <!-- height: 100%; -->
+            <!-- background: linear-gradient(rgba(26, 82, 118, 0.7), rgba(41, 128, 185, 0.5)); -->
+
+
+			<!-- } -->
+        .logo:hover {
+            transform: scale(1.1);
+        }
+	.site-name{
+		position:relative;
+	}
+    .site-name h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+			color:inherit;
+        }
+		
+		 .site-name h1:hover{red; }
+		 
+		 .site-name h1::after{
+			content:'';
+			position:absolute;
+			left:0;
+			bottom:6px;
+			width:0%;
+			height:2px;
+			background:yellow;
+			transition:all .3s ease;
+	}
+	
+	.site-name h1:hover::after{
+		width:100%;
+	}
+	
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .theme-toggle {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: var(--text-color);
+            padding: 0.5rem;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: block;
+        }
+
+        nav {
+            width: 100%;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        nav.active {
+            max-height: 500px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 1rem 0 0 0;
+        }
+
+        nav li {
+            margin: 0.5rem 0;
+			position:relative;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            display: block;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            <!-- background: var(--light-green); -->
+            transform: translateX(5px);			
+        }
+		
+		nav a:hover::after{
+			content:'';
+			position:absolute;
+			left:0;
+			bottom:10px;
+			width:0%;
+			height:1px;
+			background:var(--light-green);
+			transition:all .3s ease;
+		}
+		nav a:hover::after{
+			width:100%;
+		}
+		
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--secondary-green), var(--primary-green));
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M1200 120L0 16.48V0h1200z" fill="rgba(255,255,255,0.1)"/></svg>') no-repeat bottom;
+            background-size: cover;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .cta-button {
+            background: white;
+            color: var(--primary-green);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1.2s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px var(--shadow);
+			
+			background: var(--rojo);
+        }
+
+        /* Sections */
+        section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--primary-green);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--light-green);
+            margin: 0.5rem auto;
+        }
+
+        /* Slider de Productos */
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px var(--shadow);
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .slide-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 2rem 1rem;
+        }
+
+        .slide-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .slider-controls {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            z-index: 10;
+        }
+
+        .slider-btn {
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .slider-btn:hover {
+            background: white;
+            transform: scale(1.1);
+        }
+
+        /* Ofertas */
+        .ofertas-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .oferta-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px var(--shadow);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--light-green);
+        }
+
+        .oferta-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px var(--shadow);
+        }
+
+        .oferta-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .oferta-nombre {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+
+        .oferta-precio {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-green);
+        }
+
+        .oferta-badge {
+            background: var(--light-green);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            display: inline-block;
+        }
+
+        /* Beneficios */
+        .beneficios-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .beneficio-card {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: var(--card-bg);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .beneficio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px var(--shadow);
+        }
+
+        .beneficio-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .beneficio-card h3 {
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+        }
+
+        /* Testimonios */
+        .testimonios-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .testimonio-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px var(--shadow);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .testimonio-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px var(--shadow);
+        }
+
+        .testimonio-quote {
+            font-size: 3rem;
+            color: var(--light-green);
+            opacity: 0.3;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+        }
+
+        .testimonio-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonio-autor {
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+
+        /* Quiénes Somos */
+        .about-content {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            line-height: 1.8;
+        }
+
+        .about-content p {
+            margin-bottom: 1rem;
+        }
+
+        .about-values {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .value-item {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--bg-color);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .value-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 3px 10px var(--shadow);
+        }
+
+        .value-icon {
+            font-size: 1.5rem;
+            color: var(--light-green);
+        }
+
+        /* Sugerencias */
+        .sugerencias-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--light-green);
+            border-radius: 8px;
+            font-size: 1rem;
+            background: var(--bg-color);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--secondary-green);
+            box-shadow: 0 0 0 3px rgba(74, 124, 36, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: var(--secondary-green);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-green);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        /* Contacto */
+        .contacto-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .contacto-info {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--bg-color);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .info-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 3px 10px var(--shadow);
+        }
+
+        .info-icon {
+            font-size: 1.5rem;
+            color: var(--light-green);
+            min-width: 30px;
+        }
+
+        .horarios-lista {
+            list-style: none;
+        }
+
+        .horarios-lista li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--shadow);
+        }
+
+        .horarios-lista li:last-child {
+            border-bottom: none;
+        }
+
+        .mapa-container {
+            width: 100%;
+            height: 350px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px var(--shadow);
+        }
+
+        .mapa-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-green);
+            color: white;
+            padding: 3rem 1rem 1rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-green);
+            transform: translateX(3px);
+            display: inline-block;
+        }
+		.footer-section .footer__social {    
+			display: flex;
+			gap: 1rem;
+			margin-top: 1rem;
+		}
+				
+		#footer__social .footer__icon {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 2.5rem;
+			height: 2.5rem;
+			border-radius: 50%;
+			transition: var(--transition-default);
+			
+		}
+		#footer__social .footer__icon:hover {
+			transform: translateY(-3px);
+		}
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 20px;
+            background: transparent;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+			border:none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 999;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+			background:  #25D366;;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (min-width: 480px) {
+            .ofertas-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+
+            .menu-toggle {
+                display: none;
+            }
+
+            nav {
+                max-height: none;
+                width: auto;
+            }
+
+            nav ul {
+                display: flex;
+                gap: 0.5rem;
+                padding: 0;
+            }
+
+            nav li {
+                margin: 0;
+            }
+
+            .beneficios-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonios-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contacto-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .slide img {
+                height: 400px;
+            }
+
+            .about-values {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .hero h2 {
+                font-size: 3rem;
+            }
+
+            .ofertas-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .beneficios-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .testimonios-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .slide img {
+                height: 500px;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .ofertas-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="header-container">
+            <div class="logo-section">
+                <div class="logo"> 
+					<a href="#hero" style="background-color:transparent;">
+						<img src="./logo/logo--fruit-small.png" alt="Logo Katita Fruit" class="logo_image" loading="eager">
+					</a>  
+				</div>
+                <div class="site-name">
+                    <h1>Katita Fruit</h1>
+                </div>
+            </div>
+            <div class="header-controls">                
+                <button class="menu-toggle" id="menuToggle" aria-label="Menú">☰</button>
+            </div>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#hero">Inicio</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#ofertas">Ofertas</a></li>
+                    <li><a href="#beneficios">Beneficios</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#sugerencias">Sugerencias</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li><button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+							<span id="themeIcon">🌙</span>
+						</button>
+					</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h2>Frescura y Calidad en Cada Producto</h2>
+            <p>Frutas y verduras seleccionadas cuidadosamente para tu familia. Compromiso con la excelencia.</p>
+            <a href="#contacto" class="cta-button">Contáctanos</a>
+        </div>
+    </section>
+
+    <!-- Productos Slider -->
+    <section id="productos">
+        <h2 class="section-title">Nuestros Productos</h2>
+        <div class="slider-container">
+            <div class="slider" id="productSlider">
+                <div class="slide">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%234a7c24;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%237fb843;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='400' fill='url(%23grad1)'/%3E%3Ctext x='400' y='180' font-family='Arial' font-size='80' fill='white' text-anchor='middle'%3E🍎🍊🍋%3C/text%3E%3Ctext x='400' y='240' font-family='Arial' font-size='30' fill='white' text-anchor='middle'%3EFrutas Frescas%3C/text%3E%3C/svg%3E" alt="Frutas Frescas">
+                    <div class="slide-content">
+                        <h3>Frutas Frescas</h3>
+                        <p>Manzanas, naranjas, limones y más. Seleccionadas diariamente para garantizar máxima frescura.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Cdefs%3E%3ClinearGradient id='grad2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%232d5016;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%234a7c24;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='400' fill='url(%23grad2)'/%3E%3Ctext x='400' y='180' font-family='Arial' font-size='80' fill='white' text-anchor='middle'%3E🥬🥕🍅%3C/text%3E%3Ctext x='400' y='240' font-family='Arial' font-size='30' fill='white' text-anchor='middle'%3EVerduras de Hoja%3C/text%3E%3C/svg%3E" alt="Verduras">
+                    <div class="slide-content">
+                        <h3>Verduras de Primera</h3>
+                        <p>Lechugas, tomates, zanahorias y más. Directamente desde productores locales de confianza.</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Cdefs%3E%3ClinearGradient id='grad3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%237fb843;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23a8d96e;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='400' fill='url(%23grad3)'/%3E%3Ctext x='400' y='180' font-family='Arial' font-size='80' fill='white' text-anchor='middle'%3E🥑🥝🍇%3C/text%3E%3Ctext x='400' y='240' font-family='Arial' font-size='30' fill='white' text-anchor='middle'%3EProductos Premium%3C/text%3E%3C/svg%3E" alt="Premium">
+                    <div class="slide-content">
+                        <h3>Productos Premium</h3>
+                        <p>Aguacates, kiwis, uvas y frutas exóticas. Calidad excepcional para paladares exigentes.</p>
+                    </div>
+                </div>
+				<div class="slide">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Cdefs%3E%3ClinearGradient id='grad3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%237fb843;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23a8d96e;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='400' fill='url(%23grad3)'/%3E%3Ctext x='400' y='180' font-family='Arial' font-size='80' fill='white' text-anchor='middle'%3E🧂🫚🌶️%3C/text%3E%3Ctext x='400' y='240' font-family='Arial' font-size='30' fill='white' text-anchor='middle'%3ETodas las Especias%3C/text%3E%3C/svg%3E" alt="Premium">
+                    <div class="slide-content">
+                        <h3>Especias</h3>
+                        <p>Aadobo, Orégano, Pimientas, Gengibre, realza la delicia de sabores</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button class="slider-btn" id="prevBtn">❮</button>
+                <button class="slider-btn" id="nextBtn">❯</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ofertas -->
+    <section id="ofertas">
+        <h2 class="section-title">Ofertas de la Semana</h2>
+        <div class="ofertas-grid">
+            <div class="oferta-card">
+                <div class="oferta-header">
+                    <span class="oferta-nombre">Lechuga Hidropónica</span>
+                    <span class="oferta-precio">$35/unidad</span>
+                </div>
+                <p>Fresca, crujiente y sin pesticidas</p>
+                <span class="oferta-badge">🥬 Orgánico</span>
+            </div>
+			<div class="oferta-card">
+                <div class="oferta-header">
+                    <span class="oferta-nombre">Condimentos </span>
+                    <span class="oferta-precio">$75/unidad</span>
+                </div>
+                <p>frescos y secos, los mejores</p>
+                <span class="oferta-badge">🌱 Recomandados</span>
+            </div>
+            <div class="oferta-card">
+                <div class="oferta-header">
+                    <span class="oferta-nombre">Naranjas Dulces</span>
+                    <span class="oferta-precio">$85/kg</span>
+                </div>
+                <p>Jugosas y llenas de vitamina C, recién llegadas</p>
+                <span class="oferta-badge">🍊Oferta</span>
+            </div>
+            <div class="oferta-card">
+                <div class="oferta-header">
+                    <span class="oferta-nombre">Zanahorias Baby</span>
+                    <span class="oferta-precio">$65/kg</span>
+                </div>
+                <p>Tiernas y dulces, perfectas para snacks saludables</p>
+                <span class="oferta-badge">🥕 Nuevo</span>
+            </div>
+            <div class="oferta-card">
+                <div class="oferta-header">
+                    <span class="oferta-nombre">Frutillas Orgánicas</span>
+                    <span class="oferta-precio">$250/kg</span>
+                </div>
+                <p>Dulces y aromáticas, cultivadas sin químicos</p>
+                <span class="oferta-badge">🍓 Premium</span>
+            </div>
+            <div class="oferta-card">
+                <div class="oferta-header">
+                    <span class="oferta-nombre">Bananas Ecuador</span>
+                    <span class="oferta-precio">$55/kg</span>
+                </div>
+                <p>Maduras y perfectas, energía natural garantizada</p>
+                <span class="oferta-badge">🍌 Económico</span>
+            </div>
+			<div class="oferta-card">
+                <div class="oferta-header">
+                    <span class="oferta-nombre">Manzanas Rojas</span>
+                    <span class="oferta-precio">$120/kg</span>
+                </div>
+                <p>Dulces y crujientes, ideales para toda la familia</p>
+                <span class="oferta-badge">🍎 Oferta</span>
+            </div>
+            <div class="oferta-card">
+                <div class="oferta-header">
+                    <span class="oferta-nombre">Tomates Cherry</span>
+                    <span class="oferta-precio">$95/kg</span>
+                </div>
+                <p>Perfectos para ensaladas frescas y nutritivas</p>
+                <span class="oferta-badge">🍅 Nuevo</span>
+            </div>
+            <div class="oferta-card">
+                <div class="oferta-header">
+                    <span class="oferta-nombre">Palta Premium</span>
+                    <span class="oferta-precio">$180/kg</span>
+                </div>
+                <p>Cremosa y lista para consumir, máxima calidad</p>
+                <span class="oferta-badge">🥑 Premium</span>
+            </div>
+            <div class="oferta-card">
+                <div class="oferta-header">
+                    <span class="oferta-nombre">Kiwi</span>
+                    <span class="oferta-precio">$280/kg</span>
+                </div>
+                <p>Idewal para disfrutar y decorar en reposteria</p>
+                <span class="oferta-badge">🥝 Maxima</span>
+            </div>
+					
+        </div>
+    </section>
+
+    <!-- Beneficios -->
+    <section id="beneficios">
+        <h2 class="section-title">¿Por Qué Elegirnos?</h2>
+        <div class="beneficios-grid">
+            <div class="beneficio-card">
+                <div class="beneficio-icon">🚚</div>
+                <h3>Envío Rápido</h3>
+                <p>Entrega el mismo día en toda Montevideo. Tu pedido fresco en tu puerta.</p>
+            </div>
+            <div class="beneficio-card">
+                <div class="beneficio-icon">✅</div>
+                <h3>Calidad Garantizada</h3>
+                <p>Selección rigurosa de cada producto. Si no estás satisfecho, te lo cambiamos.</p>
+            </div>
+            <div class="beneficio-card">
+                <div class="beneficio-icon">🌱</div>
+                <h3>Productos Frescos</h3>
+                <p>Reposición diaria desde productores locales de confianza.</p>
+            </div>
+            <div class="beneficio-card">
+                <div class="beneficio-icon">💚</div>
+                <h3>Compromiso Verde</h3>
+                <p>Empaques ecológicos y prácticas sustentables en toda nuestra cadena.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section id="testimonios">
+        <h2 class="section-title">Lo Que Dicen Nuestros Clientes</h2>
+        <div class="testimonios-container">
+            <div class="testimonio-card">
+                <div class="testimonio-quote">"</div>
+                <p class="testimonio-text">Las frutas siempre llegan frescas y el servicio de delivery es excelente. Son mi primera opción desde hace años.</p>
+                <p class="testimonio-autor">- María González</p>
+            </div>
+            <div class="testimonio-card">
+                <div class="testimonio-quote">"</div>
+                <p class="testimonio-text">La calidad de las verduras es incomparable. Se nota el cuidado y la pasión que ponen en cada producto.</p>
+                <p class="testimonio-autor">- Roberto Fernández</p>
+            </div>
+            <div class="testimonio-card">
+                <div class="testimonio-quote">"</div>
+                <p class="testimonio-text">Excelente atención y productos de primera. Los precios son justos y la frescura es notable. Muy recomendable.</p>
+                <p class="testimonio-autor">- Laura Martínez</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiénes Somos -->
+    <section id="nosotros">
+        <h2 class="section-title">Quiénes Somos</h2>
+        <div class="about-content">
+            <p>
+                <strong>Katita Fruit</strong> es una empresa familiar con raíces profundas en la tierra y sus frutos. Desde hace ya 10 años, hemos dedicado nuestra vida al cultivo, selección y distribución de frutas y verduras de la más alta calidad en Montevideo.
+            </p>
+            <p>
+                Nuestro compromiso nace del conocimiento transmitido de padres a hijos, de abuelos a nietos. Conocemos cada estación, entendemos los ciclos de la naturaleza y respetamos los tiempos de cada producto. Esta sabiduría ancestral, combinada con técnicas modernas de conservación y distribución, nos permite ofrecer a nuestros clientes lo mejor del campo uruguayo.
+            </p>
+            <p>
+                En <strong>Katita Fruit</strong>, cada mañana comienza con la misma pasión: seleccionar personalmente cada producto que llega a nuestros clientes. Visitamos a productores locales, establecemos relaciones de confianza y garantizamos que solo lo mejor llegue a tu mesa.
+            </p>
+            <p>
+                La calidad y el bienestar de nuestros clientes no son solo palabras para nosotros, son el motor de cada decisión que tomamos. Por eso, hemos invertido en mejorar constantemente nuestros servicios de envío, implementando sistemas de refrigeración durante el transporte, empaques ecológicos que mantienen la frescura y un sistema de pedidos ágil que garantiza entregas el mismo día.
+            </p>
+            <p>
+                Creemos en la alimentación saludable como pilar fundamental del bienestar familiar. Por eso, además de vender frutas y verduras, nos hemos convertido en asesores de nutrición para nuestros clientes, compartiendo recetas, consejos de conservación y recomendaciones según la temporada.
+            </p>
+            
+            <h3 style="color: var(--primary-green); margin: 2rem 0 1rem;">Nuestros Valores</h3>
+            <div class="about-values">
+                <div class="value-item">
+                    <span class="value-icon">🌾</span>
+                    <div>
+                        <strong>Tradición Familiar</strong>
+                        <p>Desde muy jovenes cultivando confianza y calidad en cada producto.</p>
+                    </div>
+                </div>
+                <div class="value-item">
+                    <span class="value-icon">🤝</span>
+                    <div>
+                        <strong>Compromiso con el Cliente</strong>
+                        <p>Tu satisfacción es nuestra prioridad. Garantizamos productos frescos o te devolvemos tu dinero.</p>
+                    </div>
+                </div>
+                <div class="value-item">
+                    <span class="value-icon">🌍</span>
+                    <div>
+                        <strong>Sostenibilidad</strong>
+                        <p>Trabajamos con productores responsables y utilizamos empaques ecológicos biodegradables.</p>
+                    </div>
+                </div>
+                <div class="value-item">
+                    <span class="value-icon">💪</span>
+                    <div>
+                        <strong>Innovación Constante</strong>
+                        <p>Mejoramos día a día nuestros servicios de entrega y atención al cliente.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sugerencias -->
+    <section id="sugerencias">
+        <h2 class="section-title">Tus Sugerencias Nos Importan</h2>
+        <form class="sugerencias-form" id="sugerenciasForm">
+            <div class="form-group">
+                <label for="nombre">Nombre Completo</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+            </div>
+            <div class="form-group">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" name="email" required placeholder="tu@email.com">
+            </div>
+            <div class="form-group">
+                <label for="tipo">Tipo de Mensaje</label>
+                <select id="tipo" name="tipo" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="sugerencia">Sugerencia</option>
+                    <option value="queja">Queja</option>
+                    <option value="felicitacion">Felicitación</option>
+                    <option value="consulta">Consulta</option>
+                    <option value="pedido">Pedido Especial</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="mensaje">Tu Mensaje</label>
+                <textarea id="mensaje" name="mensaje" required placeholder="Cuéntanos qué piensas..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Enviar Mensaje</button>
+        </form>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto">
+        <h2 class="section-title">Contáctanos</h2>
+        <div class="contacto-container">
+            <div class="contacto-info">
+                <div class="info-item">
+                    <span class="info-icon">📍</span>
+                    <div>
+                        <strong>Ubicación</strong>
+                        <p>Capurro 767 e Infantes<br>Montevideo, Uruguay</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon">📞</span>
+                    <div>
+                        <strong>Teléfono</strong>
+                        <p><a href="tel:093373626" style="color: var(--text-color);">093 373 626</a></p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon">🕐</span>
+                    <div>
+                        <strong>Horarios de Atención</strong>
+                        <ul class="horarios-lista">
+                            <li><strong>Lunes a Viernes:</strong> 8:00 - 20:30 hs</li>
+                            <li><strong>Sábados:</strong> 8:00 - 16:00 hs</li>
+                            <li><strong>Domingos:</strong> 8:00 - 14:00 hs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mapa-container">
+                <iframe 
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=-56.19567871093751%2C-34.88593094075317%2C-56.18118286132813%2C-34.87871628277948&amp;layer=mapnik&amp;marker=-34.88232361446362%2C-56.18843078613281"
+                    allowfullscreen
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Katita Fruit</h3>
+                <p>Frutas y verduras frescas desde hace más de tres generaciones. Compromiso con la calidad y el bienestar de nuestros clientes.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#ofertas">Ofertas</a></li>
+                    <li><a href="#nosotros">Quiénes Somos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Información</h3>
+                <ul>
+                    <li><a href="#beneficios">Beneficios</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><a href="#sugerencias">Sugerencias</a></li>
+                    <li><a href="./disclaimer/disclaimer.html" class="header__link">Política de Privacidad</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <p>Mantente al día con nuestras ofertas y novedades en redes sociales.</p>
+					<div class="footer__social" id="footer__social">
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer__icon" aria-label="Facebook">
+                            <img src="./logo/facebook3.png" class="fab fa-facebook-f"/>
+                        </a>
+                        <a href="https://www.instagram.com/katitafruit" target="_blank" rel="noopener noreferrer" class="footer__icon" aria-label="Instagram">
+                             <img src="./logo/insta1.png" class="fab fa-facebook-f"/>
+                        </a>
+                        
+                    </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Katita Fruit. Todos los derechos reservados. Hecho con 💚 en Montevideo, Uruguay.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/598093373626?text=Hola%2C%20%20Soy%20Katita%20Fruit" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+        <img src="./logo/whatsapp (1).png" width="70px"/>
+    </a>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const html = document.documentElement;
+
+        // Check for saved theme preference or default to 'light' mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', currentTheme);
+        themeIcon.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+
+        themeToggle.addEventListener('click', () => {
+            const theme = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+        });
+
+        // Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        const navLinks = mainNav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 768) {
+                    mainNav.classList.remove('active');
+                }
+            });
+        });
+
+        // Slider
+        const slider = document.getElementById('productSlider');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let currentSlide = 0;
+        const totalSlides = slider.children.length;
+
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlider();
+        });
+
+        // Auto-advance slider
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        }, 4000);
+
+        // Form Submission
+        const sugerenciasForm = document.getElementById('sugerenciasForm');
+        sugerenciasForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
+            sugerenciasForm.reset();
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+	
+</body>
+
+</html>
