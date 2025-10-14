@@ -307,7 +307,7 @@
         section {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 3rem 1rem;
+            padding: 1.1em 1rem;
         }
 
         .section-title {
@@ -629,7 +629,7 @@
 
         .contacto-info {
             background: var(--card-bg);
-            padding: 2rem;
+            padding: 1rem;
             border-radius: 12px;
         }
 
@@ -687,7 +687,7 @@
             background: var(--primary-green);
             color: white;
             padding: 3rem 1rem 1rem;
-            margin-top: 3rem;
+            margin-top: .5rem;
         }
 
         .footer-content {
@@ -726,6 +726,7 @@
 			display: flex;
 			gap: 1rem;
 			margin-top: 1rem;
+			justify-content: space-around;
 		}
 				
 		#footer__social .footer__icon {
@@ -797,6 +798,27 @@
         }
 
         @media (min-width: 768px) {
+			.logo-section {
+				width: 700px;
+				justify-content: space-between;
+			}
+			.logo {
+				width: 85px;
+				height: 85px;
+			}
+			.logo img {
+				width: 150px;
+				height: 150px;
+			}
+			.site-name {
+				gap: 12.3rem;
+			}
+			.site-name h1 {
+				font-size: 2.5rem;
+			}
+					#header > div > div.logo-section > div.site-name > a > img {
+				width: 70px;
+			}
             .hero h2 {
                 font-size: 2.5rem;
             }
