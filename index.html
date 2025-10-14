@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -68,6 +68,7 @@
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
+			align-items: flex-start;
             align-items: center;
             flex-wrap: wrap;
             gap: 1rem;
@@ -76,7 +77,7 @@
         .logo-section {
             display: flex;
             align-items: center;
-            gap: 1.8rem;
+            gap: 1.3rem;
         }
 
         .logo {
@@ -125,6 +126,9 @@
         }
 	.site-name{
 		position:relative;
+		display:flex;
+		align-items:stretch;
+		gap: 1.3rem;
 	}
     .site-name h1 {
             font-size: 1.5rem;
@@ -148,6 +152,7 @@
 	.site-name h1:hover::after{
 		width:100%;
 	}
+	#header > div > div.logo-section > div.site-name > a > img{ width:40px;}
 	
 
         .header-controls {
@@ -353,11 +358,12 @@
             right: 0;
             background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
             color: white;
-            padding: 2rem 1rem;
+            padding: 1.1rem;
         }
 
         .slide-content h3 {
-            font-size: 1.5rem;
+            font-size: 1.3em;
+			text-align:center;
             margin-bottom: 0.5rem;
         }
 
@@ -884,6 +890,9 @@
 				</div>
                 <div class="site-name">
                     <h1>Katita Fruit</h1>
+					 <a href="https://www.instagram.com/katitafruit" target="_blank" rel="noopener noreferrer" class="footer__icon" aria-label="Instagram">
+                             <img src="./logo/insta1.png" class="fab fa-facebook-f"/>
+                        </a>
                 </div>
             </div>
             <div class="header-controls">                
@@ -923,31 +932,31 @@
         <div class="slider-container">
             <div class="slider" id="productSlider">
                 <div class="slide">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%234a7c24;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%237fb843;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='400' fill='url(%23grad1)'/%3E%3Ctext x='400' y='180' font-family='Arial' font-size='80' fill='white' text-anchor='middle'%3E🍎🍊🍋%3C/text%3E%3Ctext x='400' y='240' font-family='Arial' font-size='30' fill='white' text-anchor='middle'%3EFrutas Frescas%3C/text%3E%3C/svg%3E" alt="Frutas Frescas">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%234a7c24;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%237fb843;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='400' fill='url(%23grad1)'/%3E%3Ctext x='400' y='180' font-family='Arial' font-size='70' fill='white' text-anchor='middle'%3E🍎🍊🍋%3C/text%3E%3Ctext x='400' y='240' font-family='Arial' font-size='25' fill='white' text-anchor='middle'%3E%3C/text%3E%3C/svg%3E" alt="Frutas Frescas">
                     <div class="slide-content">
                         <h3>Frutas Frescas</h3>
                         <p>Manzanas, naranjas, limones y más. Seleccionadas diariamente para garantizar máxima frescura.</p>
                     </div>
                 </div>
                 <div class="slide">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Cdefs%3E%3ClinearGradient id='grad2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%232d5016;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%234a7c24;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='400' fill='url(%23grad2)'/%3E%3Ctext x='400' y='180' font-family='Arial' font-size='80' fill='white' text-anchor='middle'%3E🥬🥕🍅%3C/text%3E%3Ctext x='400' y='240' font-family='Arial' font-size='30' fill='white' text-anchor='middle'%3EVerduras de Hoja%3C/text%3E%3C/svg%3E" alt="Verduras">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Cdefs%3E%3ClinearGradient id='grad2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%232d5016;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%234a7c24;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='400' fill='url(%23grad2)'/%3E%3Ctext x='400' y='180' font-family='Arial' font-size='70' fill='white' text-anchor='middle'%3E🥬🥕🍅%3C/text%3E%3Ctext x='400' y='240' font-family='Arial' font-size='25' fill='white' text-anchor='middle'%3E%3C/text%3E%3C/svg%3E" alt="Verduras de Hoja">
                     <div class="slide-content">
                         <h3>Verduras de Primera</h3>
                         <p>Lechugas, tomates, zanahorias y más. Directamente desde productores locales de confianza.</p>
                     </div>
                 </div>
                 <div class="slide">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Cdefs%3E%3ClinearGradient id='grad3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%237fb843;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23a8d96e;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='400' fill='url(%23grad3)'/%3E%3Ctext x='400' y='180' font-family='Arial' font-size='80' fill='white' text-anchor='middle'%3E🥑🥝🍇%3C/text%3E%3Ctext x='400' y='240' font-family='Arial' font-size='30' fill='white' text-anchor='middle'%3EProductos Premium%3C/text%3E%3C/svg%3E" alt="Premium">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Cdefs%3E%3ClinearGradient id='grad3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%237fb843;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23a8d96e;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='400' fill='url(%23grad3)'/%3E%3Ctext x='400' y='180' font-family='Arial' font-size='70' fill='white' text-anchor='middle'%3E🥑🥝🍇%3C/text%3E%3Ctext x='400' y='240' font-family='Arial' font-size='25' fill='white' text-anchor='middle'%3E%3C/text%3E%3C/svg%3E" alt="Productos Premium">
                     <div class="slide-content">
                         <h3>Productos Premium</h3>
                         <p>Aguacates, kiwis, uvas y frutas exóticas. Calidad excepcional para paladares exigentes.</p>
                     </div>
                 </div>
 				<div class="slide">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Cdefs%3E%3ClinearGradient id='grad3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%237fb843;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23a8d96e;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='400' fill='url(%23grad3)'/%3E%3Ctext x='400' y='180' font-family='Arial' font-size='80' fill='white' text-anchor='middle'%3E🧂🫚🌶️%3C/text%3E%3Ctext x='400' y='240' font-family='Arial' font-size='30' fill='white' text-anchor='middle'%3ETodas las Especias%3C/text%3E%3C/svg%3E" alt="Premium">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Cdefs%3E%3ClinearGradient id='grad3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%237fb843;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23a8d96e;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='400' fill='url(%23grad3)'/%3E%3Ctext x='400' y='180' font-family='Arial' font-size='70' fill='white' text-anchor='middle'%3E🧂🫚🌶️%3C/text%3E%3Ctext x='400' y='240' font-family='Arial' font-size='25' fill='white' text-anchor='middle'%3E%3C/text%3E%3C/svg%3E" alt="Aromaticas">
                     <div class="slide-content">
-                        <h3>Especias</h3>
-                        <p>Aadobo, Orégano, Pimientas, Gengibre, realza la delicia de sabores</p>
+                        <h3>Aromaticas</h3>
+                        <p>Aadobo, Orégano, Pimientas, Gengibre, Eneldo, Cibouette, Menta, Romero</p>
                     </div>
                 </div>
             </div>
@@ -1212,11 +1221,11 @@
                 </div>
             </div>
             <div class="mapa-container">
-                <iframe 
-                    src="https://www.openstreetmap.org/export/embed.html?bbox=-56.19567871093751%2C-34.88593094075317%2C-56.18118286132813%2C-34.87871628277948&amp;layer=mapnik&amp;marker=-34.88232361446362%2C-56.18843078613281"
-                    allowfullscreen
-                    loading="lazy">
-                </iframe>
+                <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3644.2263651767375!2d-56.2155125237267!3d-34.87104067166604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a1d557a724407b%3A0xe35795200070368f!2sCapurro%20767%2C%2011700%20Montevideo%2C%20Departamento%20de%20Montevideo!5e1!3m2!1ses!2suy!4v1760470563864!5m2!1ses!2suy" 
+					width="600" height="450" style="border:0;" 
+					allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+				</iframe>
+                    
             </div>
         </div>
     </section>
@@ -1271,22 +1280,51 @@
     </a>
 
     <script>
+	
+	 document.addEventListener('DOMContentLoaded', () => {
+	 });
+	 
         // Theme Toggle
         const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = document.getElementById('themeIcon');
-        const html = document.documentElement;
-
-        // Check for saved theme preference or default to 'light' mode
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        html.setAttribute('data-theme', currentTheme);
-        themeIcon.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+		const html = document.documentElement;
 
         themeToggle.addEventListener('click', () => {
             const theme = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
             html.setAttribute('data-theme', theme);
+			
+		console.log("ATTR3" + html.getAttribute('data-theme') );
             localStorage.setItem('theme', theme);
             themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
         });
+		
+  function aplicarTema(datoTema){
+	const html = document.documentElement;
+    const themeIcon = document.getElementById('themeIcon');
+	const currentTheme = localStorage.getItem('theme') || 
+		 (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+		 
+	html.setAttribute('data-theme', datoTema);  
+	themeIcon.textContent = datoTema === 'dark' ? '☀️' : '🌙';	
+   localStorage.setItem('theme', datoTema); 
+  }
+  function devolverThemaGuardado(){
+	//al iniciar operador ternario  verifica si hay tema guardado dark, y sera true y devuelve dark si no false y devuelva light
+	const savedTheme = localStorage.getItem('theme') ||
+            (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+	return savedTheme;
+  }
+  
+ function initTheme(){
+	 const theme_salved = devolverThemaGuardado();
+	 aplicarTema(theme_salved);
+ }
+ 
+ // Detectar cambios en el tema del sistema a dark
+ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {  
+	aplicarTema('dark');
+   }); 
+   
+initTheme();
 
         // Menu Toggle
         const menuToggle = document.getElementById('menuToggle');
